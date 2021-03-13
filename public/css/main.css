@@ -1,0 +1,9 @@
+.side{
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    top: 30px;
+}
+body {
+    background-color: rgb(238, 238, 238);
+}
