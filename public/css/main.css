@@ -7,3 +7,9 @@
 body {
     background-color: rgb(238, 238, 238);
 }
+
+.img300{
+    height: 150px;
+    width: 100%;
+    object-fit: cover;
+}
