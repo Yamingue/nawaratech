@@ -3,9 +3,9 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-
+{% include "partials/caroussel.html.twig" %}
 <div class="row">
-    <div class="col-sm-6">
+    <div data-aos="flip-left" class="col-sm-6">
         <div class="card mb-3">
                         <div class="row g-0">
                             <div class="col-md-4">
@@ -27,7 +27,7 @@
                         </div>
                     </div>
     </div>
-    <div class="col-sm-6">
+    <div data-aos="flip-right" class="col-sm-6">
         <div class="card mb-3">
                         <div class="row g-0">
                             <div class="col-md-4">
