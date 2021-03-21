@@ -16,13 +16,16 @@
         <div class="collapse navbar-collapse" id="navbarExample01">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item active">
-              <a class="nav-link {% if app.request.get('_route') == 'home' %}active{% endif %}" aria-current="page" href="{{ path('home') }}">Home</a>
+              <a class="nav-link {% if app.request.get('_route') == 'home' %}active{% endif %}" aria-current="page" href="{{ path('home') }}">{% trans %}Accueille{% endtrans %}</a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link {% if app.request.get('_route') == 'service' %}active{% endif %} " href="{{ path('service') }}">Services</a>
+              <a class="nav-link {% if app.request.get('_route') == 'service' %}active{% endif %} " href="{{ path('service') }}">{% trans %}Services{% endtrans %}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
+              <a class="nav-link {% if app.request.get('_route') == 'price' %}active{% endif %}" href="{{ path('price') }}">{% trans %}Prix{% endtrans %}</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if app.request.get('_route') == 'menbre' %}active{% endif %}" href="{{ path('menbre') }}">{% trans %}Menbres{% endtrans %}</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">About</a>

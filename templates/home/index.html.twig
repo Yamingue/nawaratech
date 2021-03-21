@@ -3,51 +3,61 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-{% include "partials/caroussel.html.twig" %}
+{#% include "partials/caroussel.html.twig" %#}
+{% include "partials/swiper.html.twig" %}
+
+<div data-aos="zoom-in-up" class="card mt-2 mb-2">
+    <div class="card-body">
+        NawaraTech est une entreprise informatique basé au tchad faisant du Developpement mobile web et desktop.
+        <br> Elle a pour objectif de transmetre le savoir en faisant des formations.
+    </div>
+</div>
 <div class="row">
     <div data-aos="flip-left" class="col-sm-6">
         <div class="card mb-3">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="..."
-                                    class="img-fluid" />
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">
-                                        This is a wider card with supporting text below as a natural lead-in to
-                                        additional content. This content is a little bit longer.
-                                    </p>
-                                    <p class="card-text">
-                                        <small class="text-muted">Last updated 3 mins ago</small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="..."
+                        class="img-fluid" />
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </p>
                     </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div data-aos="flip-right" class="col-sm-6">
         <div class="card mb-3">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="..."
-                                    class="img-fluid" />
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">
-                                        This is a wider card with supporting text below as a natural lead-in to
-                                        additional content. This content is a little bit longer.
-                                    </p>
-                                    <p class="card-text">
-                                        <small class="text-muted">Last updated 3 mins ago</small>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="..."
+                        class="img-fluid" />
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            This is a wider card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">Last updated 3 mins ago</small>
+                        </p>
                     </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
+{% include "partials/swiper.html.twig" %}
 {% endblock %}
