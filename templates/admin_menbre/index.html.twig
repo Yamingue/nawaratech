@@ -4,7 +4,7 @@
 
 {% block body %}
 
-<div class="card mt-2">
+<div class="card mt-2" data-aos="flip-down">
     <div class="card-header text-center font-weight-bold">Ajouter un Menbre</div>
     <div class="card-body">
         {{ form(form)}}
@@ -12,5 +12,11 @@
 </div>
 <div class="row mt-2">
     {% include "admin_menbre/listing.html.twig" %}
+</div>
+
+{% include "partials/notif.html.twig" %}
+
+<div class="navigation d-flex justify-content-center mt-2 ">
+    {{ knp_pagination_render(menbres) }}
 </div>
 {% endblock %}

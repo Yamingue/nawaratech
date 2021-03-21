@@ -47,4 +47,10 @@ class MenbreRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function FindAllPaginate()
+    {
+        return $this->createQueryBuilder('m')
+            ->getQuery()
+        ;
+    }
 }

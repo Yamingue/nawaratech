@@ -4,24 +4,43 @@ namespace App\Controller\Admin;
 
 use App\Entity\Menbre;
 use App\Form\MenbreType;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\MenbreRepository;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AdminMenbreController extends AbstractController
 {
     /**
      * @Route("/admin/menbre", name="admin_menbre")
      */
-    public function index(Request $req): Response
+    public function index(Request $req,PaginatorInterface $paginator,MenbreRepository $mr): Response
     {
         $menbre = new Menbre();
         $form = $this->createForm(MenbreType::class,$menbre);
         $form->handleRequest($req);
-
+        if ($form->isSubmitted() && $form->isValid()) {
+            $photo = $form->get('photo')->getData();
+            $name = $photo->getClientOriginalName();
+            $name = str_replace( array("#", "'", ";"," "), '', $name);
+            $photo->move('images',$name);
+            $menbre->setPhoto("/images/".$name);
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($menbre);
+            $em->flush();
+            $this->addFlash('success','Menbre ajouter');
+            return $this->redirectToRoute('admin_menbre');
+        }
+        $menbres = $paginator->paginate(
+            $mr->FindAllPaginate(), /* query NOT result */
+            $req->query->getInt('page', 1), /*page number*/
+            10 /*limit per page*/
+        );
         return $this->render('admin_menbre/index.html.twig', [
             'form' => $form->createView(),
+            'menbres'=>$menbres,
         ]);
     }
 }

@@ -1,0 +1,30 @@
+
+<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+<script>
+    // Create an instance of Notyf
+var notyf = new Notyf({
+    duration: 9000,
+  position: {
+    x: 'center',
+    y: 'top',
+  },
+});
+
+// Display an error notification
+{% for e in app.flashes('error') %}
+notyf.error({
+    message: '{{ e }}',
+    dismissible: true
+  });
+{% endfor %}
+
+
+// Display a success notification
+{% for message in app.flashes('success') %}
+notyf.success({
+    message: '{{ message }}',
+    dismissible: true
+  });  
+{% endfor %}
+
+</script>
