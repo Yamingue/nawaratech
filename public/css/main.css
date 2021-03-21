@@ -7,9 +7,21 @@
 body {
     background-color: rgb(238, 238, 238);
 }
-
-.img300{
-    height: 150px;
+.card .avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -70px;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background-color: white;
+}
+.card-up{
     width: 100%;
-    object-fit: cover;
+    height: 100px;
+    background-color: rgb(90, 90, 250);
+}
+.card .avatar i {
+    font-size: 60px;
 }
