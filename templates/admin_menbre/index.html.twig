@@ -3,6 +3,13 @@
 {% block title %}Hello AdminMenbreController!{% endblock %}
 
 {% block body %}
+
+<div class="card mt-2">
+    <div class="card-header text-center font-weight-bold">Ajouter un Menbre</div>
+    <div class="card-body">
+        {{ form(form)}}
+    </div>
+</div>
 <div class="row mt-2">
     {% include "admin_menbre/listing.html.twig" %}
 </div>
