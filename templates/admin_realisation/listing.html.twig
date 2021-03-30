@@ -1,8 +1,14 @@
 {% for realisation in realisations %}
+
 <div  data-aos="fade-up" class="col col-sm-6 col-lg-4">
     <div class="card border-info mb-3">
         <div class="card-header fw-bold">{{realisation.nom}}</div>
-        <img src="{{realisation.photo}}" class="card-img-top" alt="...">
+        <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
+            <img class="img-fluid" src="{{realisation.photo}}" alt="Card image cap">
+            <a href="#!">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+        </div>
         <div class="card-body">
             <p class="card-text">
                 {{realisation.description}}<br>
