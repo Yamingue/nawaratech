@@ -14,8 +14,8 @@
   <!-- MDB -->
   <link rel="stylesheet" href="/css/mdb.min.css" />
   <link rel="stylesheet" href="/css/main.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="/aos/aos.css" rel="stylesheet">
+  <script src="/aos/aos.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
 
   {% block css %}
@@ -32,6 +32,10 @@
     {% endblock %}
   </main>
   <!-- End your project here-->
+
+  {% block footer %}
+  {% include "partials/footer_logo.html.twig" %}
+  {% endblock %}
 
   <!-- MDB -->
   <script type="text/javascript" src="/js/mdb.min.js"></script>
