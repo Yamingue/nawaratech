@@ -24,7 +24,7 @@ class AdminMenbreController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $photo = $form->get('photo')->getData();
             $name = $photo->getClientOriginalName();
-            $name = str_replace( array("#", "'", ";"," "), '', $name);
+            $name = str_replace( array("#", "'", ";"," "), '_', $name);
             $photo->move('images',$name);
             $menbre->setPhoto("/images/".$name);
             $em = $this->getDoctrine()->getManager();
