@@ -4,17 +4,30 @@ namespace App\Form;
 
 use App\Entity\Realisation;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\UrlType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Image;
 
 class RealisationType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('photo')
+            ->add('nom')
             ->add('description')
-            ->add('lien')
+            ->add('lien',UrlType::class,[
+                'required'=>false
+            ])
+            ->add('photo',FileType::class,[
+                'constraints'=>[
+                    new Image()
+                ],
+                'attr'=>[
+                    'class'=>'form-control'
+                ],
+            ])
         ;
     }
 

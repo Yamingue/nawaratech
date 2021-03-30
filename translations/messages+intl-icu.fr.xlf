@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="usdCMuU" resname="Lire plus">
+        <source>Lire plus</source>
+        <target>__Lire plus</target>
+      </trans-unit>
+      <trans-unit id="IumSuye" resname="Editer">
+        <source>Editer</source>
+        <target>__Editer</target>
+      </trans-unit>
+      <trans-unit id="Xl0CFs4" resname="Supprimer">
+        <source>Supprimer</source>
+        <target>__Supprimer</target>
+      </trans-unit>
+      <trans-unit id="WU_3Z51" resname="Réalisation">
+        <source>Réalisation</source>
+        <target>__Réalisation</target>
+      </trans-unit>
+      <trans-unit id="iHyTpm1" resname="Ajouter une réalisation">
+        <source>Ajouter une réalisation</source>
+        <target>__Ajouter une réalisation</target>
+      </trans-unit>
+      <trans-unit id="cdx0hz4" resname="Enregistrer">
+        <source>Enregistrer</source>
+        <target>__Enregistrer</target>
+      </trans-unit>
+      <trans-unit id="mTW0xv3" resname="ouvrir">
+        <source>ouvrir</source>
+        <target>__ouvrir</target>
+      </trans-unit>
+      <trans-unit id="ENajKCe" resname="Suprimer">
+        <source>Suprimer</source>
+        <target>__Suprimer</target>
+      </trans-unit>
+      <trans-unit id="3D9y95N" resname="Accueille">
+        <source>Accueille</source>
+        <target>__Accueille</target>
+      </trans-unit>
+      <trans-unit id="YE3ORF4" resname="Services">
+        <source>Services</source>
+        <target>__Services</target>
+      </trans-unit>
+      <trans-unit id="VMMk9sE" resname="Prix">
+        <source>Prix</source>
+        <target>__Prix</target>
+      </trans-unit>
+      <trans-unit id="6cmoGln" resname="Menbres">
+        <source>Menbres</source>
+        <target>__Menbres</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

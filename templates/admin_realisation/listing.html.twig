@@ -1,0 +1,24 @@
+{% for realisation in realisations %}
+<div  data-aos="fade-up" class="col col-sm-6 col-lg-4">
+    <div class="card border-info mb-3">
+        <div class="card-header fw-bold">{{realisation.nom}}</div>
+        <img src="{{realisation.photo}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <p class="card-text">
+                {{realisation.description}}<br>
+                {% if realisation.lien %}
+                <span class="card-text"> <a href="{{realisation.lien}}"> {% trans %}ouvrir{% endtrans %} </a> </span>
+                {% endif %}
+            </p>
+
+        </div>
+        <div class="card-footer">
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <button class="btn btn-primary">{% trans %}Editer{% endtrans %}</button>
+                <a href="{{ path('admin_realisation_delete',{id:realisation.id}) }}"
+                    class="btn btn-danger">{% trans %}Suprimer{% endtrans %}</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}

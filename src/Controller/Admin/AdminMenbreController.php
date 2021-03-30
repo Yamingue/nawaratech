@@ -10,11 +10,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
+/**
+     * @Route("/admin/menbre")
+     */
 class AdminMenbreController extends AbstractController
 {
     /**
-     * @Route("/admin/menbre", name="admin_menbre")
+     * @Route("", name="admin_menbre")
      */
     public function index(Request $req,PaginatorInterface $paginator,MenbreRepository $mr): Response
     {
