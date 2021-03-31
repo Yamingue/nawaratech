@@ -1,0 +1,18 @@
+<div data-aos="flip-left" class="col-sm-6 mb-2">
+    <div class="card">
+        <div class="card-header fw-bold">
+            {{service.nom}}
+        </div>
+        <div class="bg-image hover-overlay ripple rounded-0" data-mdb-ripple-color="light">
+            <img class="img-fluid" src="{{service.photo}}" alt="{{service.nom}}">
+            <a href="#!">
+              <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+        </div>
+        <div class="card-footer">
+            <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#readService" data-mdb-whatever="{{ service.description }}">Lire</button>
+            
+        </div>
+
+    </div>
+</div>

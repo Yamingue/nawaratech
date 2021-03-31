@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}NawaraTech{% endblock %}
 
 {% block body %}
 {% include "partials/caroussel.html.twig" %}
@@ -13,58 +13,55 @@
     </div>
 </div>
 <div class="row">
-    <div data-aos="flip-left" class="col-sm-6">
-        <div class="card mb-3">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="..."
-                        class="img-fluid" />
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.
-                        </p>
-                        <p class="card-text">
-                            <small class="text-muted">Last updated 3 mins ago</small>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div data-aos="flip-right" class="col-sm-6">
-        <div class="card mb-3">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="..."
-                        class="img-fluid" />
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.
-                        </p>
-                        <p class="card-text">
-                            <small class="text-muted">Last updated 3 mins ago</small>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% set services = services(10) %}
+    {% for service in services %}
+    {% include "home/service_liste2.html.twig" %}
+    {% endfor %}
 </div>
 
 <div class="card" data-aos="zoom-out">
     <div class="card-header font-weight-bold text-center">
-       Nos realisations
+       {% trans %}Nos realisations{% endtrans %}
     </div>
     <div class="card-body">
         {% include "partials/swiper.html.twig" %}
     </div>
+    <div class="card-footer">
+        <a href="#!" class="btn btn-sm btn-primary">{% trans %}voire plus{% endtrans %}</a>
+    </div>
 </div>
+
+
+<div class="modal fade" id="readService" tabindex="-1" aria-labelledby="readServiceLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="content">
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">{% trans %}Fermer{% endtrans %}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    var modal = document.querySelector('#readService')
+    modal.addEventListener('show.mdb.modal', function (event) {
+      // Button that triggered the modal
+      var button = event.relatedTarget
+      // Extract info from data-bs-* attributes
+      var recipient = button.getAttribute('data-mdb-whatever')
+      // If necessary, you could initiate an AJAX request here
+      // and then do the updating in a callback.
+      //
+      // Update the modal's content.
+      var content = document.querySelector('#content')
+       content.innerHTML = recipient
+    })
+  </script>
 {% endblock %}

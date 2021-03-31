@@ -47,4 +47,18 @@ class RealisationRepository extends ServiceEntityRepository
         ;
     }
     */
+    /**
+     * @param $number int
+     * @return Realisation[] || null
+     */
+    public function findLimite($value)
+    {
+        return $this->createQueryBuilder('r')
+            ->orderBy('r.id', 'DESC')
+            ->setMaxResults($value)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+    
 }

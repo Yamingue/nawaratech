@@ -48,15 +48,10 @@
  <!-- Swiper -->
  <div class="swiper-container card mt-2">
     <div class="swiper-wrapper">
-        <img src="/moussa/1.jpg" alt="" srcset="" class="swiper-slide">
-        <img src="/moussa/2.jpg" alt="" srcset="" class="swiper-slide">
-        <img src="/moussa/1.jpg" alt="" srcset="" class="swiper-slide">
-        <img src="/moussa/2.jpg" alt="" srcset="" class="swiper-slide">
-        
-        <img src="/moussa/1.jpg" alt="" srcset="" class="swiper-slide">
-        <img src="/moussa/2.jpg" alt="" srcset="" class="swiper-slide">
-        <img src="/moussa/1.jpg" alt="" srcset="" class="swiper-slide">
-        <img src="/moussa/5.jpg" alt="" srcset="" class="swiper-slide">
+      {% set realisations = realisations() %}
+      {% for r in realisations %}
+        <img src="{{ r.photo }}" alt="{{ r.nom }}" srcset="" class="swiper-slide">
+      {% endfor %}
     </div>
     <!-- Add Pagination -->
     <div class="swiper-pagination"></div>
